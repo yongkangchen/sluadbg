@@ -10,4 +10,5 @@ deploy:
     secure: /PM9ewDT9EE+jyfaMkBb7HXxt5FdvCBW7V8wG28H35a+3PA9pUXhF+s5HA+b+ZST
   artifact: ldb
   on:
+    branch: master
     appveyor_repo_tag: true

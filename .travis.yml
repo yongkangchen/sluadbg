@@ -1,9 +1,10 @@
 os:
 - osx
+- linux
 language: go
 go:
 - 1.3
-script: go build ldb.go
+script: go build -o ldb-$TRAVIS_OS_NAME ldb.go
 deploy:
   provider: releases
   api_key:

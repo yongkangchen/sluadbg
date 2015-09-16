@@ -1,13 +1,14 @@
 version: 1.0.{build}
 build_script:
-- go build -o ldb-win ldb.go
+- go build ldb.go
+- zip ldb-win.zip ldb
 artifacts:
-- path: ldb-win
+- path: ldb-win.zip
 deploy:
 - provider: GitHub
   auth_token:
     secure: /PM9ewDT9EE+jyfaMkBb7HXxt5FdvCBW7V8wG28H35a+3PA9pUXhF+s5HA+b+ZST
-  artifact: ldb-win
+  artifact: ldb-win.zip
   on:
     branch: master
     appveyor_repo_tag: true

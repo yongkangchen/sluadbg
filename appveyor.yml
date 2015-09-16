@@ -1,6 +1,9 @@
 version: 1.0.{build}
 build_script:
 - go build ldb.go
+artifacts:
+- path: ldb
+  name: ldb-win
 deploy:
 - provider: GitHub
   auth_token:

@@ -1,7 +1,9 @@
 version: 1.0.{build}
 build_script:
 - go build ldb.go
+- dir
 after_build:
+- dir
 - 7z a ldb-win.zip ldb
 artifacts:
 - path: ldb-win.zip

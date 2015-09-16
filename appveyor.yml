@@ -1,0 +1,8 @@
+version: 1.0.{build}
+build_script:
+- go build ldb.go
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: /PM9ewDT9EE+jyfaMkBb7HXxt5FdvCBW7V8wG28H35a+3PA9pUXhF+s5HA+b+ZST
+  artifact: ldb

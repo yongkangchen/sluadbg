@@ -4,12 +4,14 @@ os:
 language: go
 go:
 - 1.3
-script: go build -o ldb-$TRAVIS_OS_NAME ldb.go
+script: 
+- go build ldb.go
+- zip ldb-$TRAVIS_OS_NAME.zip ldb
 deploy:
   provider: releases
   api_key:
     secure: Oz0zowPBw3Ss+2WicMX6mOd6sZjoD91nKXMpS6EpxRqfwZ51jgYwe9iJqe87Gcde5Rs/hGwoWN6qiTjxYeaS9UU+IkFLushxmM8TtPB197HQRacFhw90+9grQXhwSvSDAMGYbQlnZPt/IpdMTmGMQVwH67CxiSf/UPvF952oQT2DB1G7hLLJkitX70p6euoSY8FoHqv2wHAvfJRdCYjNPhPqhHpqdGETeuuC8jqr5YPJqmKdk5R/UHA7he+c260hx/0XIxflomGWMZQhP6jPsps6xuKZE01IdrBykrFH/UIMZc5MAK96prdcbc1yvSBF6eC6c9mKwPILtrNidTfy8oX0CViiC1X+W+VE4sR96qIaFQ77uKsRdVdcGC8jFpFduSXehPMjevzO09PeG/pkK8AZF91dBtkopaNbjTtuUmVnpixjWOnyeTp7kgOBy5kalH1lUVDLncJS6Dx5uPJ/VcERh1bSkTByQ/3O9l66Xdyazw8H+i+UMGEKc+O8XYSs1Y1f2Te81xNRP+RKr/32FjOrAELk9oAbuDXBhiwnOntr27gt/CBvII0MQdWcaKoRf8+E/zTbTHRYS408IieJR8Ga9YC6R4IgsoMKn2MlAOLpZckVGe3F09d1G1ZS8JlN1OGp3T1YKo0BjcYuZ3T2EW10GpK4/WgkHtI6mxaKJrg=
-  file: ldb-$TRAVIS_OS_NAME
+  file: ldb-$TRAVIS_OS_NAME.zip
   skip_cleanup: true
   on:
     tags: true
